@@ -9,18 +9,23 @@ var users = [
         "gender" : "Female",
         "image" : "jane.png"
     }
-];
+]
 
-var id = 0;
+var index = 0;
 
-function toggleUser(){
-    var userName = document.getElementById("user-name");
-    var userGender = document.getElementById("user-gender");
-    var userImage = document.getElementById("user-image");
+function toggle(){
+    if(index == 0)
+        index = 1;
+    else
+        index = 0;
 
-    id = (id + 1) % 2;
+    // update user-name to updated index
+    document.getElementById("user-name").innerText = users[index].name
 
-    userName.innerHTML = users[id].name;
-    userGender.innerHTML = users[id].gender;
-    userImage.src = users[id].image;
+    document.getElementById("user-gender").innerText = users[index].gender
+
+    document.getElementById("user-image").src = users[index].image
+
+
+
 }
